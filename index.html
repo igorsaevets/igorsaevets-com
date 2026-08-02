@@ -4,55 +4,104 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Igor Saevets — AI Expert and Entrepreneur</title>
-<meta name="description" content="Igor Saevets. AI expert and entrepreneur. Founder of Page2AI: open-source AI/LLM tooling — Chrome extension, MCP server, npm library, reproducible benchmark.">
+<meta name="description" content="Igor Saevets, AI expert and entrepreneur in Los Angeles. Founder of Page2AI, an open-source suite that converts web pages to clean Markdown for LLMs: Chrome and Firefox extensions, an MCP server, npm libraries and a reproducible extraction benchmark.">
 <link rel="canonical" href="https://igorsaevets.com/">
+<meta name="color-scheme" content="light dark">
 
 <link rel="me" href="https://github.com/igorsaevets">
 <link rel="me" href="https://orcid.org/0009-0006-8636-1377">
 <link rel="me" href="https://www.linkedin.com/in/igorsaevets">
 <link rel="me" href="https://www.npmjs.com/~igorsaevets">
-<link rel="me" href="mailto:igorsaevets@gmail.com">
+<link rel="me" href="https://www.facebook.com/igorsaevets">
+<link rel="me" href="https://www.instagram.com/igorsaevets/">
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Igor Saevets — AI Expert and Entrepreneur">
-<meta property="og:description" content="Founder of Page2AI. Building open-source AI/LLM developer tooling.">
+<meta property="og:description" content="Founder of Page2AI: open-source tooling that converts any web page to clean Markdown for LLMs.">
 <meta property="og:url" content="https://igorsaevets.com/">
-<!-- og:image omitted intentionally until real photo asset is prepared; adding placeholder JPG that returns 404 breaks OG unfurl on Twitter/LinkedIn. -->
-<!-- <meta property="og:image" content="https://igorsaevets.com/og.png"> -->
-
+<meta property="og:site_name" content="Igor Saevets">
+<meta property="profile:first_name" content="Igor">
+<meta property="profile:last_name" content="Saevets">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Igor Saevets — AI Expert and Entrepreneur">
+<meta name="twitter:description" content="Founder of Page2AI: open-source tooling that converts any web page to clean Markdown for LLMs.">
+<!-- og:image stays omitted until a real asset exists. A placeholder that 404s breaks the
+     unfurl on every platform, which is worse than having no image card at all. -->
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://igorsaevets.com/#person",
-  "name": "Igor Saevets",
-  "alternateName": ["Игорь Саевец"],
-  "url": "https://igorsaevets.com/",
-  "jobTitle": "AI Expert and Entrepreneur",
-  "description": "Founder of Page2AI. Builder of open-source AI/LLM developer tools since 2026.",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Page2AI"
-  },
-  "identifier": [
-    {"@type": "PropertyValue", "propertyID": "ORCID", "value": "0009-0006-8636-1377"}
-  ],
-  "sameAs": [
-    "https://github.com/igorsaevets",
-    "https://orcid.org/0009-0006-8636-1377",
-    "https://www.linkedin.com/in/igorsaevets",
-    "https://www.npmjs.com/~igorsaevets"
-  ],
-  "nationality": [
-    {"@type": "Country", "name": "Belarus"}
-  ],
-  "knowsAbout": [
-    "AI",
-    "Large Language Models",
-    "Model Context Protocol",
-    "Chrome extensions",
-    "Open source software"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://igorsaevets.com/#person",
+      "name": "Igor Saevets",
+      "alternateName": ["Игорь Саевец"],
+      "url": "https://igorsaevets.com/",
+      "mainEntityOfPage": "https://igorsaevets.com/",
+      "jobTitle": "AI Expert and Entrepreneur",
+      "description": "Igor Saevets is an AI expert and entrepreneur based in Los Angeles. He is the founder of Page2AI, an open-source suite that converts web pages into clean Markdown for large language models.",
+      "homeLocation": {"@type": "Place", "name": "Los Angeles, California, United States"},
+      "worksFor": {"@id": "https://igorsaevets.com/#page2ai"},
+      "identifier": [
+        {"@type": "PropertyValue", "propertyID": "ORCID", "value": "0009-0006-8636-1377"}
+      ],
+      "sameAs": [
+        "https://github.com/igorsaevets",
+        "https://orcid.org/0009-0006-8636-1377",
+        "https://www.linkedin.com/in/igorsaevets",
+        "https://www.npmjs.com/~igorsaevets",
+        "https://www.facebook.com/igorsaevets",
+        "https://www.instagram.com/igorsaevets/"
+      ],
+      "knowsAbout": [
+        "Artificial intelligence",
+        "Large language models",
+        "Model Context Protocol",
+        "Web content extraction",
+        "Browser extensions",
+        "Open source software",
+        "TypeScript"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://igorsaevets.com/#page2ai",
+      "name": "Page2AI",
+      "url": "https://igorsaevets.github.io/page2ai-docs/",
+      "description": "Page2AI is an open-source suite that converts any web page into clean Markdown for AI and LLM consumption. It ships as a Chrome extension, a Firefox add-on, a Model Context Protocol server and npm libraries, all MIT-licensed and free.",
+      "founder": {"@id": "https://igorsaevets.com/#person"}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://igorsaevets.com/#website",
+      "url": "https://igorsaevets.com/",
+      "name": "Igor Saevets",
+      "inLanguage": "en",
+      "publisher": {"@id": "https://igorsaevets.com/#person"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Page2AI — Webpage to Markdown",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome, Firefox",
+      "url": "https://chromewebstore.google.com/detail/dlpaaijcnbbmlfeohlphjpnbbcnomnno",
+      "description": "Browser extension that converts the current web page to clean Markdown for LLMs. Runs entirely locally, sends nothing to a server.",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {"@id": "https://igorsaevets.com/#person"},
+      "isAccessibleForFree": true,
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "@page2ai/mcp",
+      "codeRepository": "https://github.com/igorsaevets/page2ai-mcp",
+      "url": "https://www.npmjs.com/package/@page2ai/mcp",
+      "programmingLanguage": "TypeScript",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {"@id": "https://igorsaevets.com/#person"},
+      "description": "Model Context Protocol server that converts a web page URL to clean Markdown for AI agents. Zero external APIs, SSRF-guarded."
+    }
   ]
 }
 </script>
@@ -85,7 +134,7 @@ body {
   line-height: 1.55;
 }
 main {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
@@ -101,8 +150,9 @@ h1 {
 }
 .bio {
   font-size: 1.05rem;
-  margin: 0 0 2.5rem;
+  margin: 0 0 1rem;
 }
+.bio:last-of-type { margin-bottom: 2.5rem; }
 h2 {
   font-size: 1.1rem;
   text-transform: uppercase;
@@ -127,7 +177,7 @@ h2 {
   color: var(--fg);
   transition: border-color 120ms ease;
 }
-.card:hover { border-color: var(--link); }
+.card:hover, .card:focus-visible { border-color: var(--link); }
 .card h3 {
   font-size: 1rem;
   margin: 0 0 0.35rem;
@@ -141,11 +191,13 @@ h2 {
   color: var(--muted);
   font-size: 0.95rem;
 }
-.contact a {
-  color: var(--link);
-  text-decoration: none;
+.contact a { color: var(--link); text-decoration: none; }
+.contact a:hover, .contact a:focus-visible { text-decoration: underline; }
+.note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
 }
-.contact a:hover { text-decoration: underline; }
 footer {
   margin-top: 3rem;
   color: var(--muted);
@@ -158,42 +210,75 @@ footer time { font-variant-numeric: tabular-nums; }
 <main>
 
 <h1>Igor Saevets</h1>
-<p class="role">AI Expert and Entrepreneur</p>
+<p class="role">AI Expert and Entrepreneur, Los Angeles</p>
 
 <p class="bio">
-Founder of Page2AI: an open-source suite for turning any web page into clean Markdown for AI and LLM consumption. I build developer tooling with Model Context Protocol integration and a reproducible benchmark methodology.
+I build open-source developer tooling for the step nobody enjoys: getting a web page into a
+language model without the navigation, cookie banners and boilerplate coming along with it.
+</p>
+
+<p class="bio">
+<strong>Page2AI</strong> is that work. It converts any web page to clean Markdown and ships as a
+Chrome extension, a Firefox add-on, a Model Context Protocol server for AI agents, and npm
+libraries. Everything runs locally, sends nothing to a server, is MIT-licensed, and is free and
+stays free. The extraction quality is measured against other tools in a public benchmark that
+anyone can re-run, including the cases where Page2AI loses.
 </p>
 
 <h2>Projects</h2>
 <div class="projects">
   <a class="card" href="https://igorsaevets.github.io/page2ai-docs/">
     <h3>Page2AI Docs</h3>
-    <p>Product documentation and install guides.</p>
+    <p>Documentation, install guides and the tool comparison.</p>
   </a>
   <a class="card" href="https://chromewebstore.google.com/detail/dlpaaijcnbbmlfeohlphjpnbbcnomnno">
     <h3>Chrome Extension</h3>
-    <p>Web page to Markdown, one click.</p>
+    <p>Web page to Markdown in one click. Free, MIT, fully local.</p>
+  </a>
+  <a class="card" href="https://addons.mozilla.org/en-US/firefox/addon/page2ai-webpage-to-markdown/">
+    <h3>Firefox Add-on</h3>
+    <p>The same extension for Firefox, with a readiness gate for single-page apps.</p>
   </a>
   <a class="card" href="https://www.npmjs.com/package/@page2ai/mcp">
     <h3>MCP Server</h3>
-    <p>Model Context Protocol server for AI agents.</p>
+    <p>Model Context Protocol server so an AI agent can read any URL as Markdown.</p>
+  </a>
+  <a class="card" href="https://www.npmjs.com/package/@page2ai/core">
+    <h3>@page2ai/core</h3>
+    <p>The extraction library behind all of the above. Node and browser adapters.</p>
   </a>
   <a class="card" href="https://github.com/igorsaevets/page2ai-benchmark">
-    <h3>Benchmark</h3>
-    <p>Reproducible comparison across web-to-Markdown tools.</p>
+    <h3>Extraction Benchmark</h3>
+    <p>Reproducible comparison of web-to-Markdown tools across documentation frameworks.</p>
+  </a>
+  <a class="card" href="https://github.com/igorsaevets/ai-second-opinion">
+    <h3>AI Second Opinion</h3>
+    <p>Send one document to three independent AI models, see where they disagree, and verify
+       mechanically that each actually did the research instead of inventing sources.</p>
+  </a>
+  <a class="card" href="https://github.com/igorsaevets/codex-reset-credit-manager-cleanroom">
+    <h3>Codex Reset Notifier</h3>
+    <p>Read-only Windows notifier for usage-limit reset expiry. No credit is ever redeemed.</p>
   </a>
 </div>
 
-<h2>Contact</h2>
+<h2>Elsewhere</h2>
 <p class="contact">
-Email: <a href="mailto:igorsaevets@gmail.com">igorsaevets@gmail.com</a><br>
 GitHub: <a rel="me" href="https://github.com/igorsaevets">@igorsaevets</a><br>
+LinkedIn: <a rel="me" href="https://www.linkedin.com/in/igorsaevets">/in/igorsaevets</a><br>
 ORCID: <a rel="me" href="https://orcid.org/0009-0006-8636-1377">0009-0006-8636-1377</a><br>
-LinkedIn: <a rel="me" href="https://www.linkedin.com/in/igorsaevets">/in/igorsaevets</a>
+npm: <a rel="me" href="https://www.npmjs.com/~igorsaevets">~igorsaevets</a><br>
+Facebook: <a rel="me" href="https://www.facebook.com/igorsaevets">/igorsaevets</a><br>
+Instagram: <a rel="me" href="https://www.instagram.com/igorsaevets/">@igorsaevets</a>
+</p>
+<p class="note">
+For anything about the software, open an issue on the relevant repository. That is the fastest
+route and it leaves a public record other people can find. For anything else, LinkedIn.
 </p>
 
 <footer>
-Last updated <time datetime="2026-07-25">2026-07-25</time>. Source: <a href="https://github.com/igorsaevets">github.com/igorsaevets</a>.
+Last updated <time datetime="2026-08-02">2026-08-02</time>.
+Source: <a href="https://github.com/igorsaevets/igorsaevets-com">github.com/igorsaevets/igorsaevets-com</a>.
 </footer>
 
 </main>
