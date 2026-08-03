@@ -39,7 +39,7 @@
       "@type": "ProfilePage",
       "@id": "https://igorsaevets.com/#profilepage",
       "url": "https://igorsaevets.com/",
-      "dateModified": "2026-08-02",
+      "dateModified": "2026-08-03",
       "mainEntity": {"@id": "https://igorsaevets.com/#person"}
     },
     {
@@ -112,6 +112,15 @@
       "license": "https://opensource.org/licenses/MIT",
       "author": {"@id": "https://igorsaevets.com/#person"},
       "description": "Model Context Protocol server that converts a web page URL to clean Markdown for AI agents. Zero external APIs, SSRF-guarded."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "KrokAI Law",
+      "codeRepository": "https://github.com/igorsaevets/krokai-law",
+      "programmingLanguage": "Python",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {"@id": "https://igorsaevets.com/#person"},
+      "description": "Checks every quotation in an AI-assisted draft against the actual source text on local disk. Offline verification of legal citations, no API key."
     }
   ]
 }
@@ -267,6 +276,11 @@ anyone can re-run, including the cases where Page2AI loses.
     <p>Send one document to three independent AI models, see where they disagree, and verify
        mechanically that each actually did the research instead of inventing sources.</p>
   </a>
+  <a class="card" href="https://github.com/igorsaevets/krokai-law">
+    <h3>KrokAI Law</h3>
+    <p>Your AI quoted a law — is the quote real? Checks every quotation in a draft against the
+       source text on your own disk. Offline, no API key.</p>
+  </a>
   <a class="card" href="https://github.com/igorsaevets/codex-reset-credit-manager-cleanroom">
     <h3>Codex Reset Notifier</h3>
     <p>Read-only Windows notifier for usage-limit reset expiry. No credit is ever redeemed.</p>
@@ -289,7 +303,7 @@ route and it leaves a public record other people can find.
 </p>
 
 <footer>
-Last updated <time datetime="2026-08-02">2026-08-02</time>.
+Last updated <time datetime="2026-08-03">2026-08-03</time>.
 Source: <a href="https://github.com/igorsaevets/igorsaevets-com">github.com/igorsaevets/igorsaevets-com</a>.
 </footer>
 
