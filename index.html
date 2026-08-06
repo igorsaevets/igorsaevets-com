@@ -123,6 +123,15 @@
       "license": "https://opensource.org/licenses/MIT",
       "author": {"@id": "https://igorsaevets.com/#person"},
       "description": "Checks every quotation in an AI-assisted draft against the actual source text on local disk. Offline verification of legal citations, no API key."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "ScanQuorum",
+      "codeRepository": "https://github.com/igorsaevets/scanquorum",
+      "programmingLanguage": "Python",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {"@id": "https://igorsaevets.com/#person"},
+      "description": "Multi-engine OCR quorum for scanned PDFs. Accepts a word only when independent OCR engines agree and reports the ones they do not, so text extracted for AI and search can be relied on. No language model participates in transcription."
     }
   ]
 }
@@ -282,6 +291,12 @@ anyone can re-run, including the cases where Page2AI loses.
     <h3>KrokAI Law</h3>
     <p>Your AI quoted a law — is the quote real? Checks every quotation in a draft against the
        source text on your own disk. Offline, no API key.</p>
+  </a>
+  <a class="card" href="https://github.com/igorsaevets/scanquorum">
+    <h3>ScanQuorum</h3>
+    <p>Your scanned PDF contains invisible text your AI quotes as fact. Reads the page with
+       several independent OCR engines, accepts a word only when they agree, and shows you the
+       ones they don&rsquo;t. No language model in the transcription path.</p>
   </a>
   <a class="card" href="https://github.com/igorsaevets/codex-reset-credit-manager-cleanroom">
     <h3>Codex Reset Notifier</h3>
