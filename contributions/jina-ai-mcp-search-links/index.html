@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jina AI MCP server: search pages that lost their search words — Igor Saevets</title>
+<meta name="description" content="Igor Saevets found and diagnosed a bug in Jina AI&#x27;s MCP server; Jina AI&#x27;s founder adopted the proposed fix. Plain-English summary with the public record.">
+<link rel="canonical" href="https://igorsaevets.com/contributions/jina-ai-mcp-search-links/">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jina AI MCP server: search pages that lost their search words — Igor Saevets">
+<meta property="og:description" content="Igor Saevets found and diagnosed a bug in Jina AI&#x27;s MCP server; Jina AI&#x27;s founder adopted the proposed fix. Plain-English summary with the public record.">
+<meta property="og:url" content="https://igorsaevets.com/contributions/jina-ai-mcp-search-links/">
+<meta property="og:site_name" content="Igor Saevets">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://igorsaevets.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Igor Saevets, AI Expert and Entrepreneur. Founder of Page2AI.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jina AI MCP server: search pages that lost their search words — Igor Saevets">
+<meta name="twitter:description" content="Igor Saevets found and diagnosed a bug in Jina AI&#x27;s MCP server; Jina AI&#x27;s founder adopted the proposed fix. Plain-English summary with the public record.">
+<meta name="twitter:image" content="https://igorsaevets.com/og.png">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://igorsaevets.com/contributions/jina-ai-mcp-search-links/#page",
+      "url": "https://igorsaevets.com/contributions/jina-ai-mcp-search-links/",
+      "name": "Jina AI MCP server: search pages that lost their search words",
+      "description": "Igor Saevets found and diagnosed a bug in Jina AI's MCP server; Jina AI's founder adopted the proposed fix. Plain-English summary with the public record.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://igorsaevets.com/#website"
+      },
+      "about": {
+        "@id": "https://igorsaevets.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://igorsaevets.com/contributions/jina-ai-mcp-search-links/#breadcrumb"
+      },
+      "mentions": [
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Jina AI MCP Server",
+          "codeRepository": "https://github.com/jina-ai/MCP",
+          "creator": {
+            "@type": "Organization",
+            "name": "Jina AI"
+          }
+        }
+      ],
+      "datePublished": "2026-11-21",
+      "dateModified": "2026-11-21"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://igorsaevets.com/contributions/jina-ai-mcp-search-links/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Igor Saevets",
+          "item": "https://igorsaevets.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Open-source contributions",
+          "item": "https://igorsaevets.com/contributions/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jina AI MCP server: search pages that lost their search words"
+        }
+      ]
+    }
+  ]
+}</script>
+
+<style>
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --muted: #666;
+  --link: #0047ab;
+  --card-bg: #f6f7f9;
+  --card-border: #e5e7eb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d0d;
+    --fg: #eee;
+    --muted: #9aa0a6;
+    --link: #7ab7ff;
+    --card-bg: #1a1a1a;
+    --card-border: #2a2a2a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.55;
+}
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+a { color: var(--link); }
+h1 {
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+.role {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+}
+.crumbs {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+}
+.crumbs a { text-decoration: none; }
+.crumbs a:hover, .crumbs a:focus-visible { text-decoration: underline; }
+.lede { font-size: 1.05rem; margin: 0 0 1rem; }
+.counts {
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-left: 3px solid var(--card-border);
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  margin: 0 0 2.25rem;
+}
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 3rem 0 0.5rem;
+}
+.section-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+ol.sources { list-style: none; margin: 0; padding: 0; }
+ol.sources > li {
+  padding: 1.1rem 0 1.2rem;
+  border-top: 1px solid var(--card-border);
+}
+ol.sources > li:last-child { border-bottom: 1px solid var(--card-border); }
+.outlet {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 0.3rem;
+}
+.outlet .kind { text-transform: none; letter-spacing: 0; }
+.headline {
+  font-size: 1.02rem;
+  margin: 0 0 0.15rem;
+  font-weight: 600;
+}
+.headline a { text-decoration: none; }
+.headline a:hover, .headline a:focus-visible { text-decoration: underline; }
+.orig {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 0.55rem;
+}
+blockquote {
+  margin: 0.6rem 0 0.55rem;
+  padding: 0.5rem 0 0.5rem 0.9rem;
+  border-left: 3px solid var(--card-border);
+  background: var(--card-bg);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.94rem;
+}
+blockquote p { margin: 0 0 0.3rem; }
+blockquote p:last-child { margin: 0; color: var(--muted); }
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.meta a { text-decoration: none; }
+.meta a:hover, .meta a:focus-visible { text-decoration: underline; }
+.sep { opacity: 0.5; padding: 0 0.35rem; }
+.faq { margin-top: 1rem; }
+.faq h3 {
+  font-size: 1rem;
+  margin: 1.4rem 0 0.3rem;
+}
+.faq p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--card-border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer time { font-variant-numeric: tabular-nums; }
+
+.summary { margin: 0.25rem 0 0; font-size: 0.97rem; }
+.facts { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+.facts li { margin: 0.35rem 0; }
+.records { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+.records li { margin: 0.4rem 0; }
+.src { color: var(--muted); font-size: 0.85rem; }
+.note { color: var(--muted); font-size: 0.92rem; }
+dl.terms { margin: 0.5rem 0 0; }
+dl.terms dt { font-weight: 600; margin-top: 0.85rem; }
+dl.terms dd { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; }
+ol.timeline { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+ol.timeline li { margin: 0.45rem 0; }
+code { font-size: 0.92em; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumbs"><a href="/">Igor Saevets</a> <span class="sep">/</span> <a href="/contributions/">Open-source contributions</a> <span class="sep">/</span> Jina AI MCP server</p>
+
+<h1>Jina AI MCP server: search pages that lost their search words</h1>
+<p class="role">A bug report with its cause and a proposed fix, adopted by Jina AI&#x27;s founder</p>
+
+<p class="counts">Reported 19 July 2026 <span class="sep">·</span> fixed 11 August 2026 <span class="sep">·</span> code by Jina AI&#x27;s founder, following my proposal</p>
+
+<h2>The software</h2>
+<p>Jina AI builds search technology for AI systems: services that read web pages, search the web,
+and find and rank the most relevant text. Elastic, the search-software company listed on the New
+York Stock Exchange, completed its acquisition of Jina AI in October 2025 and describes it as
+&ldquo;a pioneer in open source multimodal and multilingual embeddings, reranker, and small
+language models&rdquo; (<a href="https://ir.elastic.co/News--Events/news/news-details/2025/Elastic-Completes-Acquisition-of-Jina-AI-a-Leader-in-Frontier-Models-for-Multimodal-and-Multilingual-Search/default.aspx">Elastic press release</a>).</p>
+<p>The Jina AI MCP server is Jina AI's official tool that gives AI assistants these services
+through the Model Context Protocol (MCP), a common standard for connecting AI assistants to tools
+(<a href="https://github.com/jina-ai/MCP">its code on GitHub</a>).</p>
+<p><strong>How widely it is used.</strong> Jina AI runs the server as a hosted service and does not
+publish usage numbers. Its code repository has <a href="https://github.com/jina-ai/MCP">921 stars</a> on GitHub
+(21 November 2026).</p>
+
+<h2>The problem</h2>
+<p>When an AI assistant asked the server to read a web address containing <code>?s=</code>, the
+server removed that part before fetching the page, because it treated it as a session code: a
+tracking value that is safe to strip. On WordPress websites, <code>?s=</code> carries the words of
+a search, so asking for a search-results page returned the site's home page instead.</p>
+
+<h2>What I did</h2>
+<p>I reported the problem on 19 July 2026, explained why it happened, and proposed a narrow fix
+that keeps <code>?s=</code> while the server goes on removing real tracking codes
+(<a href="https://github.com/jina-ai/MCP/issues/29">issue #29</a>).</p>
+
+<h2>What happened</h2>
+<p>On 11 August 2026 Jina AI's founder and former chief executive, now Vice President of AI at
+Elastic, fixed it (<a href="https://github.com/jina-ai/MCP/commit/ec99603c0a1155bfe8e2150de59da90862fef6ec">commit ec99603</a>, which says &ldquo;Closes #29&rdquo;) and
+replied on the report:</p>
+<blockquote cite="https://github.com/jina-ai/MCP/issues/29">
+  <p>&ldquo;Confirmed and fixed in ec99603. &hellip; Your diagnosis of the cause was exact.
+  Went with the narrow change you proposed &hellip; Thanks for the precise report.&rdquo;</p>
+</blockquote>
+<p><strong>Release.</strong> Jina AI runs this server as a hosted service and publishes no version
+numbers, so there is no release to cite. The reply said the fix would be live on the hosted service
+after its next update.</p>
+
+<h2>Who wrote the code</h2>
+<p>The code change was written by Jina AI's founder, who chose the narrow fix proposed in my
+report.</p>
+
+<h2>Records</h2>
+<ul class="records">
+  <li><a href="https://github.com/jina-ai/MCP/issues/29">Bug report: issue #29</a>, 19 July 2026, with the reply of 11 August 2026 <span class="sep">·</span> <a href="https://web.archive.org/web/20261121151438/https://github.com/jina-ai/MCP/issues/29">archived copy</a></li>
+  <li><a href="https://github.com/jina-ai/MCP/commit/ec99603c0a1155bfe8e2150de59da90862fef6ec">The fix: commit ec99603</a>, 11 August 2026 <span class="sep">·</span> <a href="https://web.archive.org/web/20261121151228/https://github.com/jina-ai/MCP/commit/ec99603c0a1155bfe8e2150de59da90862fef6ec">archived copy</a></li>
+</ul>
+
+<footer>
+Facts, numbers and links checked on <time datetime="2026-11-21">21 November 2026</time>. Each number is
+given with its date and source, because numbers change daily.
+Back to <a href="/contributions/">all contributions</a>.
+</footer>
+
+</main>
+</body>
+</html>
