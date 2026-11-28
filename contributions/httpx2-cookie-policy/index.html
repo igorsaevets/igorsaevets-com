@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTTPX2: cookies sent although the program had refused them — Igor Saevets</title>
+<meta name="description" content="A bug report by Igor Saevets led a maintainer of Pydantic&#x27;s HTTPX2 to reopen and merge a closed fix for a lost cookie rule. Plain-English summary with the public record.">
+<link rel="canonical" href="https://igorsaevets.com/contributions/httpx2-cookie-policy/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HTTPX2: cookies sent although the program had refused them — Igor Saevets">
+<meta property="og:description" content="A bug report by Igor Saevets led a maintainer of Pydantic&#x27;s HTTPX2 to reopen and merge a closed fix for a lost cookie rule. Plain-English summary with the public record.">
+<meta property="og:url" content="https://igorsaevets.com/contributions/httpx2-cookie-policy/">
+<meta property="og:site_name" content="Igor Saevets">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://igorsaevets.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Igor Saevets, AI Expert and Entrepreneur. Founder of Page2AI.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HTTPX2: cookies sent although the program had refused them — Igor Saevets">
+<meta name="twitter:description" content="A bug report by Igor Saevets led a maintainer of Pydantic&#x27;s HTTPX2 to reopen and merge a closed fix for a lost cookie rule. Plain-English summary with the public record.">
+<meta name="twitter:image" content="https://igorsaevets.com/og.png">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://igorsaevets.com/contributions/httpx2-cookie-policy/#page",
+      "url": "https://igorsaevets.com/contributions/httpx2-cookie-policy/",
+      "name": "HTTPX2: cookies sent although the program had refused them",
+      "description": "A bug report by Igor Saevets led a maintainer of Pydantic's HTTPX2 to reopen and merge a closed fix for a lost cookie rule. Plain-English summary with the public record.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://igorsaevets.com/#website"
+      },
+      "about": {
+        "@id": "https://igorsaevets.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://igorsaevets.com/contributions/httpx2-cookie-policy/#breadcrumb"
+      },
+      "mentions": [
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "HTTPX2",
+          "codeRepository": "https://github.com/pydantic/httpx2",
+          "creator": {
+            "@type": "Organization",
+            "name": "Pydantic"
+          }
+        }
+      ],
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://igorsaevets.com/contributions/httpx2-cookie-policy/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Igor Saevets",
+          "item": "https://igorsaevets.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Open-source contributions",
+          "item": "https://igorsaevets.com/contributions/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "HTTPX2: cookies sent although the program had refused them"
+        }
+      ]
+    }
+  ]
+}</script>
+
+<style>
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --muted: #666;
+  --link: #0047ab;
+  --card-bg: #f6f7f9;
+  --card-border: #e5e7eb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d0d;
+    --fg: #eee;
+    --muted: #9aa0a6;
+    --link: #7ab7ff;
+    --card-bg: #1a1a1a;
+    --card-border: #2a2a2a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.55;
+}
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+a { color: var(--link); }
+h1 {
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+.role {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+}
+.crumbs {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+}
+.crumbs a { text-decoration: none; }
+.crumbs a:hover, .crumbs a:focus-visible { text-decoration: underline; }
+.lede { font-size: 1.05rem; margin: 0 0 1rem; }
+.counts {
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-left: 3px solid var(--card-border);
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  margin: 0 0 2.25rem;
+}
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 3rem 0 0.5rem;
+}
+.section-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+ol.sources { list-style: none; margin: 0; padding: 0; }
+ol.sources > li {
+  padding: 1.1rem 0 1.2rem;
+  border-top: 1px solid var(--card-border);
+}
+ol.sources > li:last-child { border-bottom: 1px solid var(--card-border); }
+.outlet {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 0.3rem;
+}
+.outlet .kind { text-transform: none; letter-spacing: 0; }
+.headline {
+  font-size: 1.02rem;
+  margin: 0 0 0.15rem;
+  font-weight: 600;
+}
+.headline a { text-decoration: none; }
+.headline a:hover, .headline a:focus-visible { text-decoration: underline; }
+.orig {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 0.55rem;
+}
+blockquote {
+  margin: 0.6rem 0 0.55rem;
+  padding: 0.5rem 0 0.5rem 0.9rem;
+  border-left: 3px solid var(--card-border);
+  background: var(--card-bg);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.94rem;
+}
+blockquote p { margin: 0 0 0.3rem; }
+blockquote p:last-child { margin: 0; color: var(--muted); }
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.meta a { text-decoration: none; }
+.meta a:hover, .meta a:focus-visible { text-decoration: underline; }
+.sep { opacity: 0.5; padding: 0 0.35rem; }
+.faq { margin-top: 1rem; }
+.faq h3 {
+  font-size: 1rem;
+  margin: 1.4rem 0 0.3rem;
+}
+.faq p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--card-border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer time { font-variant-numeric: tabular-nums; }
+
+.summary { margin: 0.25rem 0 0; font-size: 0.97rem; }
+.facts { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+.facts li { margin: 0.35rem 0; }
+.records { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+.records li { margin: 0.4rem 0; }
+.src { color: var(--muted); font-size: 0.85rem; }
+.note { color: var(--muted); font-size: 0.92rem; }
+dl.terms { margin: 0.5rem 0 0; }
+dl.terms dt { font-weight: 600; margin-top: 0.85rem; }
+dl.terms dd { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; }
+ol.timeline { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+ol.timeline li { margin: 0.45rem 0; }
+code { font-size: 0.92em; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumbs"><a href="/">Igor Saevets</a> <span class="sep">/</span> <a href="/contributions/">Open-source contributions</a> <span class="sep">/</span> HTTPX2</p>
+
+<h1>HTTPX2: cookies sent although the program had refused them</h1>
+<p class="role">A bug report that led a maintainer of Pydantic&#x27;s HTTPX2 to reopen and merge a fix closed 20 days earlier</p>
+
+<p class="counts">Reported 23 November 2026 <span class="sep">·</span> fixed 24 November 2026 <span class="sep">·</span> code by a project maintainer <span class="sep">·</span> not yet in a published version</p>
+
+<h2>The software</h2>
+<p>HTTPX2 is free, open-source software for programs written in the Python programming language. It
+sends a program's requests to websites and web services and receives their replies. Pydantic, the
+organization behind the Pydantic library for Python, maintains it as the continuation of HTTPX, an
+older library of the same kind whose own development had slowed
+(<a href="https://github.com/pydantic/httpx2">the project's description</a>).</p>
+<p>The official Python library of the Model Context Protocol (MCP), the common standard for
+connecting AI assistants to tools, depends on HTTPX2: its current version, 2.3, requires it
+(<a href="https://github.com/modelcontextprotocol/python-sdk/blob/v2.3.0/pyproject.toml">the library's package file</a>), as has every version since 2.0 in July 2026.</p>
+<p><strong>How widely it is used</strong></p>
+<ul class="facts">
+  <li>HTTPX2 was downloaded <a href="https://pypistats.org/packages/httpx2">111,503,278 times</a> from PyPI, the public registry of
+  Python software, in the week of 21&ndash;27 November 2026.</li>
+  <li>On GitHub it has <a href="https://github.com/pydantic/httpx2">1,691 stars</a> (28 November 2026).</li>
+</ul>
+<p class="note">Download counts include automatic installs by build servers, so they show how
+much the software is used, not how many people use it. A GitHub star is a bookmark a user gives
+to a project.</p>
+
+<h2>The problem</h2>
+<p>Websites ask the programs that visit them to keep small pieces of data called cookies and to send
+them back with later requests; a cookie can, for example, keep a user logged in. A program that uses
+HTTPX2 can give it a cookie policy: a rule for which cookies it may keep and send back. A server that
+makes requests for many users through one shared HTTPX2 client, the part that sends the requests, can
+set a rule that refuses all cookies, so that a cookie meant for one user never goes out with another
+user's request.</p>
+<p>That rule was lost when the program handed its cookies to HTTPX2 inside HTTPX2's own cookie
+container, called <code>Cookies</code>: HTTPX2 copied the cookies into a new container and left the
+rule behind. This happened on the ordinary way of giving a client its cookies, when the client is
+created, and also when they are replaced later. In my test the rule refused every cookie, yet a cookie
+set by one reply was sent with the next request.</p>
+
+<h2>What I did</h2>
+<p>I found the problem in an MCP server I was building, which shares one HTTPX2 client between its
+users: my test saw a cookie from one user's reply go out with the next user's request. On
+23 November 2026 I reported it in the project's discussion forum, where its contribution guide asks
+for possible bugs to be raised (<a href="https://github.com/pydantic/httpx2/discussions/1359">discussion #1359</a>). The report gave a short script
+that shows the problem and its output, pointed to the lines of HTTPX2's code where the rule is
+dropped, and answered the reasons that had been given for closing an earlier fix (below).</p>
+
+<h2>What happened</h2>
+<ol class="timeline">
+  <li><strong>4 November 2026, before my report.</strong> A maintainer of HTTPX2 had written a one-line
+  fix that keeps the rule when cookies are copied (<a href="https://github.com/pydantic/httpx2/pull/1314">pull request #1314</a>) and closed it
+  unmerged the same day. The reasons given: the fix has to read an internal part of Python's own cookie
+  code; the rule was lost only on a path the project had already deprecated, that is, marked to be
+  phased out; and <a href="https://github.com/pydantic/httpx2/pull/1314#issuecomment-6627829661">&ldquo;no one has reported this&rdquo;</a>.</li>
+  <li><strong>23 November 2026.</strong> My report showed the rule lost on the ordinary path, which is
+  not deprecated. It also pointed out that Requests, another Python library of this kind, reads the
+  same internal part when it copies cookies. About an hour later another outside contributor
+  reproduced the problem and posted the same one-line change in the discussion.</li>
+  <li><strong>24 November 2026, 23 hours after my report.</strong> The maintainer reopened the closed
+  fix and merged it into the main code (<a href="https://github.com/pydantic/httpx2/commit/538b256cf35e52191dc871d2ef98b352f673f472">commit 538b256</a>).</li>
+  <li><strong>Release.</strong> As of 28 November 2026 the fix is not yet in a published version: the latest,
+  2.16.2, was published on 16 November, before it was merged.</li>
+</ol>
+
+<h2>How my report and the fix are connected</h2>
+<p>The maintainer did not reply in my discussion, and the pull request does not mention it, so the
+connection rests on the record above. The fix had been closed because the loss seemed limited to a
+deprecated path and no one had reported it. My report showed it on the ordinary path and answered the
+other reason. Twenty-three hours later the same fix was reopened and merged. I found no other report of
+this problem in the project's issues or discussions between those dates.</p>
+
+<h2>Who wrote the code</h2>
+<p>The code is the maintainer's: the fix written on 4 November, reopened and merged on 24 November. My
+part was finding the problem on the path the project still supports, showing it with a script, and
+answering the reasons the fix had been closed. Another outside contributor posted the same one-line
+change in the discussion.</p>
+
+<h2>Records</h2>
+<ul class="records">
+  <li><a href="https://github.com/pydantic/httpx2/discussions/1359">Bug report: discussion #1359</a>, 23 November 2026 <span class="sep">·</span> <a href="https://web.archive.org/web/20261128115837/https://github.com/pydantic/httpx2/discussions/1359">archived copy</a></li>
+  <li><a href="https://github.com/pydantic/httpx2/pull/1314">The fix: pull request #1314</a>, closed 4 November 2026, reopened and merged
+  24 November 2026 <span class="sep">·</span> <a href="https://web.archive.org/web/20261128115623/https://github.com/pydantic/httpx2/pull/1314">archived copy</a></li>
+  <li><a href="https://github.com/pydantic/httpx2/commit/538b256cf35e52191dc871d2ef98b352f673f472">The fix in the main code: commit 538b256</a>, 24 November 2026 <span class="sep">·</span> <a href="https://web.archive.org/web/20261128115744/https://github.com/pydantic/httpx2/commit/538b256cf35e52191dc871d2ef98b352f673f472">archived copy</a></li>
+</ul>
+
+<footer>
+Facts and links checked on <time datetime="2026-11-28">28 November 2026</time>. Each number is given
+with its date and source, because numbers change daily.
+Back to <a href="/contributions/">all contributions</a>.
+</footer>
+
+</main>
+</body>
+</html>

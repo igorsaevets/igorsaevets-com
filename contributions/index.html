@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Igor Saevets — Open-source contributions</title>
-<meta name="description" content="Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.">
+<meta name="description" content="Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Pydantic, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.">
 <link rel="canonical" href="https://igorsaevets.com/contributions/">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -15,7 +15,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Igor Saevets — Open-source contributions">
-<meta property="og:description" content="Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.">
+<meta property="og:description" content="Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Pydantic, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.">
 <meta property="og:url" content="https://igorsaevets.com/contributions/">
 <meta property="og:site_name" content="Igor Saevets">
 <meta property="og:locale" content="en_US">
@@ -25,7 +25,7 @@
 <meta property="og:image:alt" content="Igor Saevets, AI Expert and Entrepreneur. Founder of Page2AI.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Igor Saevets — Open-source contributions">
-<meta name="twitter:description" content="Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.">
+<meta name="twitter:description" content="Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Pydantic, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.">
 <meta name="twitter:image" content="https://igorsaevets.com/og.png">
 
 <script type="application/ld+json">{
@@ -36,7 +36,7 @@
       "@id": "https://igorsaevets.com/contributions/#page",
       "url": "https://igorsaevets.com/contributions/",
       "name": "Igor Saevets — Open-source contributions",
-      "description": "Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.",
+      "description": "Bug reports and fixes Igor Saevets contributed to open-source software made by Microsoft, Xiaomi, Pydantic, Jina AI and the Model Context Protocol project, each explained in plain English with links to the public record and archived copies.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://igorsaevets.com/#website"
@@ -56,7 +56,7 @@
     {
       "@type": "ItemList",
       "@id": "https://igorsaevets.com/contributions/#list",
-      "numberOfItems": 8,
+      "numberOfItems": 9,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -79,30 +79,36 @@
         {
           "@type": "ListItem",
           "position": 4,
+          "name": "HTTPX2: cookies sent although the program had refused them",
+          "url": "https://igorsaevets.com/contributions/httpx2-cookie-policy/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
           "name": "Playwright MCP: a file-saving failure on Windows",
           "url": "https://igorsaevets.com/contributions/playwright-mcp-windows-file-save/"
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 6,
           "name": "MiMo Code: an automated test that failed at random",
           "url": "https://igorsaevets.com/contributions/mimo-code-flaky-test/"
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 7,
           "name": "MiMo Code: a login hint that pointed to another program",
           "url": "https://igorsaevets.com/contributions/mimo-code-login-hint/"
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 8,
           "name": "Model Context Protocol: an upgrade tool that moved license notices",
           "url": "https://igorsaevets.com/contributions/mcp-typescript-sdk-upgrade-tool/"
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 9,
           "name": "Jina AI MCP server: search pages that lost their search words",
           "url": "https://igorsaevets.com/contributions/jina-ai-mcp-search-links/"
         }
@@ -279,8 +285,8 @@ code { font-size: 0.92em; overflow-wrap: anywhere; }
 <p class="crumbs"><a href="/">Igor Saevets</a> <span class="sep">/</span> Open-source contributions</p>
 
 <h1>Open-source contributions</h1>
-<p class="role">Bug reports and fixes for software made by Microsoft, Xiaomi, Jina AI and the Model
-Context Protocol project</p>
+<p class="role">Bug reports and fixes for software made by Microsoft, Xiaomi, Pydantic, Jina AI and the
+Model Context Protocol project</p>
 
 <p class="lede">
 Open-source software is written in public: anyone can read the code, report a problem or propose a
@@ -295,9 +301,9 @@ the code I wrote. Each page says plainly who wrote the code and what changed.
 </p>
 
 <p class="counts">
-8 contributions <span class="sep">·</span> 4 projects
+9 contributions <span class="sep">·</span> 5 projects
 <span class="sep">·</span> 2 with my own code merged
-<span class="sep">·</span> 6 acted on by others after my report
+<span class="sep">·</span> 7 acted on by others after my report
 <span class="sep">·</span> every link checked on <time datetime="2026-11-28">28 November 2026</time>
 </p>
 
@@ -321,6 +327,12 @@ the code I wrote. Each page says plainly who wrote the code and what changed.
     <p class="headline"><a href="/contributions/playwright-mcp-run-code-echo/">Playwright MCP: a script file repeated in full in every reply</a></p>
     <p class="summary">I measured and reported that Playwright MCP repeated a whole script file in its reply; another contributor&#x27;s fix was merged two days later.</p>
     <p class="meta">Reported <time datetime="2026-11-22">22 Nov 2026</time> <span class="sep">·</span> fixed <time datetime="2026-11-24">24 Nov 2026</time> <span class="sep">·</span> code by another contributor <span class="sep">·</span> not yet released</p>
+  </li>
+  <li>
+    <p class="outlet">HTTPX2 <span class="kind">— Pydantic</span></p>
+    <p class="headline"><a href="/contributions/httpx2-cookie-policy/">HTTPX2: cookies sent although the program had refused them</a></p>
+    <p class="summary">I showed that HTTPX2 dropped a program&#x27;s rule against cookies on its ordinary path; the next day a maintainer reopened a closed fix and merged it.</p>
+    <p class="meta">Reported <time datetime="2026-11-23">23 Nov 2026</time> <span class="sep">·</span> fixed <time datetime="2026-11-24">24 Nov 2026</time> <span class="sep">·</span> code by a maintainer <span class="sep">·</span> not yet released</p>
   </li>
   <li>
     <p class="outlet">Playwright MCP <span class="kind">— Microsoft</span></p>
