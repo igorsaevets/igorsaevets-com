@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playwright MCP: text results saved to files in JSON form — Igor Saevets</title>
+<meta name="description" content="A bug report by Igor Saevets led Microsoft&#x27;s Playwright team to add a Playwright MCP setting that saves text results as plain text. Summary with the public record.">
+<link rel="canonical" href="https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Playwright MCP: text results saved to files in JSON form — Igor Saevets">
+<meta property="og:description" content="A bug report by Igor Saevets led Microsoft&#x27;s Playwright team to add a Playwright MCP setting that saves text results as plain text. Summary with the public record.">
+<meta property="og:url" content="https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/">
+<meta property="og:site_name" content="Igor Saevets">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://igorsaevets.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Igor Saevets, AI Expert and Entrepreneur. Founder of Page2AI.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Playwright MCP: text results saved to files in JSON form — Igor Saevets">
+<meta name="twitter:description" content="A bug report by Igor Saevets led Microsoft&#x27;s Playwright team to add a Playwright MCP setting that saves text results as plain text. Summary with the public record.">
+<meta name="twitter:image" content="https://igorsaevets.com/og.png">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/#page",
+      "url": "https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/",
+      "name": "Playwright MCP: text results saved to files in JSON form",
+      "description": "A bug report by Igor Saevets led Microsoft's Playwright team to add a Playwright MCP setting that saves text results as plain text. Summary with the public record.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://igorsaevets.com/#website"
+      },
+      "about": {
+        "@id": "https://igorsaevets.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/#breadcrumb"
+      },
+      "mentions": [
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Playwright",
+          "codeRepository": "https://github.com/microsoft/playwright",
+          "creator": {
+            "@type": "Organization",
+            "name": "Microsoft"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Playwright MCP",
+          "codeRepository": "https://github.com/microsoft/playwright-mcp",
+          "creator": {
+            "@type": "Organization",
+            "name": "Microsoft"
+          }
+        }
+      ],
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Igor Saevets",
+          "item": "https://igorsaevets.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Open-source contributions",
+          "item": "https://igorsaevets.com/contributions/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Playwright MCP: text results saved to files in JSON form"
+        }
+      ]
+    }
+  ]
+}</script>
+
+<style>
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --muted: #666;
+  --link: #0047ab;
+  --card-bg: #f6f7f9;
+  --card-border: #e5e7eb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d0d;
+    --fg: #eee;
+    --muted: #9aa0a6;
+    --link: #7ab7ff;
+    --card-bg: #1a1a1a;
+    --card-border: #2a2a2a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.55;
+}
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+a { color: var(--link); }
+h1 {
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+.role {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+}
+.crumbs {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+}
+.crumbs a { text-decoration: none; }
+.crumbs a:hover, .crumbs a:focus-visible { text-decoration: underline; }
+.lede { font-size: 1.05rem; margin: 0 0 1rem; }
+.counts {
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-left: 3px solid var(--card-border);
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  margin: 0 0 2.25rem;
+}
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 3rem 0 0.5rem;
+}
+.section-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+ol.sources { list-style: none; margin: 0; padding: 0; }
+ol.sources > li {
+  padding: 1.1rem 0 1.2rem;
+  border-top: 1px solid var(--card-border);
+}
+ol.sources > li:last-child { border-bottom: 1px solid var(--card-border); }
+.outlet {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 0.3rem;
+}
+.outlet .kind { text-transform: none; letter-spacing: 0; }
+.headline {
+  font-size: 1.02rem;
+  margin: 0 0 0.15rem;
+  font-weight: 600;
+}
+.headline a { text-decoration: none; }
+.headline a:hover, .headline a:focus-visible { text-decoration: underline; }
+.orig {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 0.55rem;
+}
+blockquote {
+  margin: 0.6rem 0 0.55rem;
+  padding: 0.5rem 0 0.5rem 0.9rem;
+  border-left: 3px solid var(--card-border);
+  background: var(--card-bg);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.94rem;
+}
+blockquote p { margin: 0 0 0.3rem; }
+blockquote p:last-child { margin: 0; color: var(--muted); }
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.meta a { text-decoration: none; }
+.meta a:hover, .meta a:focus-visible { text-decoration: underline; }
+.sep { opacity: 0.5; padding: 0 0.35rem; }
+.faq { margin-top: 1rem; }
+.faq h3 {
+  font-size: 1rem;
+  margin: 1.4rem 0 0.3rem;
+}
+.faq p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--card-border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer time { font-variant-numeric: tabular-nums; }
+
+.summary { margin: 0.25rem 0 0; font-size: 0.97rem; }
+.facts { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+.facts li { margin: 0.35rem 0; }
+.records { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+.records li { margin: 0.4rem 0; }
+.src { color: var(--muted); font-size: 0.85rem; }
+.note { color: var(--muted); font-size: 0.92rem; }
+dl.terms { margin: 0.5rem 0 0; }
+dl.terms dt { font-weight: 600; margin-top: 0.85rem; }
+dl.terms dd { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; }
+ol.timeline { margin: 0.5rem 0 0; padding-left: 1.15rem; }
+ol.timeline li { margin: 0.45rem 0; }
+code { font-size: 0.92em; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumbs"><a href="/">Igor Saevets</a> <span class="sep">/</span> <a href="/contributions/">Open-source contributions</a> <span class="sep">/</span> Playwright MCP</p>
+
+<h1>Playwright MCP: text results saved to files in JSON form</h1>
+<p class="role">A bug report that led Microsoft&#x27;s Playwright team to add a setting that saves text results as plain text</p>
+
+<p class="counts">Reported 22 November 2026 <span class="sep">·</span> the team&#x27;s change merged 26 November 2026 <span class="sep">·</span> code by the Playwright team&#x27;s automated assistant <span class="sep">·</span> not yet in a published version</p>
+
+<h2>The software</h2>
+<p>Playwright is free, open-source software from Microsoft that controls a web browser
+automatically. Developers use it to test websites: it opens pages, clicks, types and checks what
+appears, the way a person would. Microsoft announced it in January 2020 (<a href="https://en.wikipedia.org/wiki/Playwright_(software)">Wikipedia</a>).</p>
+<p>Playwright MCP is part of the same Microsoft project. It lets AI assistants use a real web
+browser: open a page, read it, click, fill in forms and save screenshots or PDF files. It works
+through the Model Context Protocol (MCP), a common standard for connecting AI assistants to tools.
+GitHub's AI coding assistant, Copilot coding agent, uses it as its built-in web browser
+(<a href="https://github.blog/changelog/2025-07-02-copilot-coding-agent-now-has-its-own-web-browser/">GitHub, 2 July 2025</a>).</p>
+<p><strong>How widely it is used</strong></p>
+<ul class="facts">
+  <li>Playwright was downloaded <a href="https://api.npmjs.org/downloads/point/2026-11-14:2026-11-20/playwright">182,298,598 times</a> from npm, the main
+  public registry of JavaScript software, in the week of 14&ndash;20 November 2026, and
+  <a href="https://pypistats.org/packages/playwright">34.1 million times</a> from PyPI, the Python registry, in the week before
+  21 November 2026.</li>
+  <li>On GitHub it has <a href="https://github.com/microsoft/playwright">100,713 stars</a>, and
+  <a href="https://github.com/microsoft/playwright/network/dependents">561,996 public repositories</a> depend on it (21 November 2026).</li>
+  <li>Playwright MCP was downloaded <a href="https://api.npmjs.org/downloads/point/2026-11-14:2026-11-20/@playwright/mcp">11,330,185 times</a> from npm in
+  the week of 14&ndash;20 November 2026 and has <a href="https://github.com/microsoft/playwright-mcp">39,961 stars</a> on GitHub.</li>
+</ul>
+<p class="note">Download counts include automatic installs by build servers, so they show how
+much the software is used, not how many people use it. A GitHub star is a bookmark a user gives
+to a project.</p>
+
+<h2>The problem</h2>
+<p>An AI assistant can ask Playwright MCP to run a short piece of JavaScript inside a web page and
+save the result to a file. When the result was text, the file did not hold that text. It held the
+text in JSON, a data format: wrapped in quotation marks, with each line break written as the two
+characters <code>\n</code>, so several lines became one line, whatever the file was called. The
+tool's other ways of saving a file write plain text.</p>
+
+<h2>What I did</h2>
+<p>I found the problem in my own work and reported it on 22 November 2026 with three steps to
+reproduce it and the exact contents of the files it wrote (<a href="https://github.com/microsoft/playwright/issues/44295">issue #44295</a>).</p>
+
+<h2>What happened</h2>
+<ol class="timeline">
+  <li><strong>23 November 2026.</strong> A Playwright maintainer passed the report to the team's
+  automated assistant. It reproduced the problem on Windows in three browsers and opened a change
+  (<a href="https://github.com/microsoft/playwright/pull/44318">pull request #44318</a>).</li>
+  <li><strong>24&ndash;26 November 2026.</strong> Two maintainers reviewed the change in several
+  rounds. The final version adds a setting to the tool, <code>format</code>: with
+  <code>format: "string"</code>, a text result is saved as the text itself. Without the setting, a
+  text result is still saved in JSON form, as before.</li>
+  <li><strong>26 November 2026.</strong> The change was merged into the main code, and the report was
+  closed as completed. The change's description says &ldquo;Fixes
+  https://github.com/microsoft/playwright/issues/44295&rdquo;.</li>
+  <li><strong>Release.</strong> As of 28 November 2026 the change is not yet in a published version:
+  the latest, 0.0.86, was published on 18 November, before it was merged.</li>
+</ol>
+
+<h2>Who wrote the code</h2>
+<p>The code was written by the Playwright team's automated assistant, working from my report, and
+approved by two maintainers. My part was finding, reproducing and reporting the problem.</p>
+
+<h2>Records</h2>
+<ul class="records">
+  <li><a href="https://github.com/microsoft/playwright/issues/44295">Bug report: issue #44295</a>, 22 November 2026 <span class="sep">·</span> <a href="https://web.archive.org/web/20261128091353/https://github.com/microsoft/playwright/issues/44295">archived copy</a></li>
+  <li><a href="https://github.com/microsoft/playwright/pull/44318">The change: pull request #44318</a>, merged 26 November 2026 <span class="sep">·</span> <a href="https://web.archive.org/web/20261128091508/https://github.com/microsoft/playwright/pull/44318">archived copy</a></li>
+</ul>
+
+<footer>
+Facts and links checked on <time datetime="2026-11-28">28 November 2026</time>. Each number is given
+with its date and source, because numbers change daily.
+Back to <a href="/contributions/">all contributions</a>.
+</footer>
+
+</main>
+</body>
+</html>

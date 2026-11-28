@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://igorsaevets.com/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
 <url><loc>https://igorsaevets.com/media/</loc><lastmod>2026-08-04</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-<url><loc>https://igorsaevets.com/contributions/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://igorsaevets.com/contributions/playwright-mcp-windows-file-save/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://igorsaevets.com/contributions/mimo-code-flaky-test/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://igorsaevets.com/contributions/mimo-code-login-hint/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://igorsaevets.com/contributions/mcp-typescript-sdk-upgrade-tool/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://igorsaevets.com/contributions/jina-ai-mcp-search-links/</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://igorsaevets.com/contributions/playwright-mcp-windows-file-save/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/mimo-code-flaky-test/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/mimo-code-login-hint/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/mcp-typescript-sdk-upgrade-tool/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/jina-ai-mcp-search-links/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/playwright-mcp-output-gitignore/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://igorsaevets.com/contributions/playwright-mcp-run-code-echo/</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

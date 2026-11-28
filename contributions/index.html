@@ -51,40 +51,58 @@
         "@id": "https://igorsaevets.com/contributions/#breadcrumb"
       },
       "datePublished": "2026-11-21",
-      "dateModified": "2026-11-21"
+      "dateModified": "2026-11-28"
     },
     {
       "@type": "ItemList",
       "@id": "https://igorsaevets.com/contributions/#list",
-      "numberOfItems": 5,
+      "numberOfItems": 8,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
+          "name": "Playwright MCP: text results saved to files in JSON form",
+          "url": "https://igorsaevets.com/contributions/playwright-mcp-evaluate-text-files/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Playwright MCP: saved pages that showed up as new project files",
+          "url": "https://igorsaevets.com/contributions/playwright-mcp-output-gitignore/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Playwright MCP: a script file repeated in full in every reply",
+          "url": "https://igorsaevets.com/contributions/playwright-mcp-run-code-echo/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
           "name": "Playwright MCP: a file-saving failure on Windows",
           "url": "https://igorsaevets.com/contributions/playwright-mcp-windows-file-save/"
         },
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": 5,
           "name": "MiMo Code: an automated test that failed at random",
           "url": "https://igorsaevets.com/contributions/mimo-code-flaky-test/"
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 6,
           "name": "MiMo Code: a login hint that pointed to another program",
           "url": "https://igorsaevets.com/contributions/mimo-code-login-hint/"
         },
         {
           "@type": "ListItem",
-          "position": 4,
+          "position": 7,
           "name": "Model Context Protocol: an upgrade tool that moved license notices",
           "url": "https://igorsaevets.com/contributions/mcp-typescript-sdk-upgrade-tool/"
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 8,
           "name": "Jina AI MCP server: search pages that lost their search words",
           "url": "https://igorsaevets.com/contributions/jina-ai-mcp-search-links/"
         }
@@ -272,19 +290,38 @@ plain English and links to the public record on GitHub, the website where these 
 </p>
 
 <p class="lede">
-Only contributions a project acted on are listed: it fixed the problem I reported, or merged the
-code I wrote. Each page says plainly who wrote the code.
+Only contributions a project acted on are listed: it changed its software after my report, or merged
+the code I wrote. Each page says plainly who wrote the code and what changed.
 </p>
 
 <p class="counts">
-5 contributions <span class="sep">·</span> 4 projects <span class="sep">·</span> 2 with my own
-code merged <span class="sep">·</span> 3 fixed by others after my report <span class="sep">·</span>
-every link checked on <time datetime="2026-11-21">21 November 2026</time>
+8 contributions <span class="sep">·</span> 4 projects
+<span class="sep">·</span> 2 with my own code merged
+<span class="sep">·</span> 6 acted on by others after my report
+<span class="sep">·</span> every link checked on <time datetime="2026-11-28">28 November 2026</time>
 </p>
 
 <h2>Contributions</h2>
 <p class="section-note">Most recent outcome first.</p>
 <ol class="sources">
+  <li>
+    <p class="outlet">Playwright MCP <span class="kind">— Microsoft</span></p>
+    <p class="headline"><a href="/contributions/playwright-mcp-evaluate-text-files/">Playwright MCP: text results saved to files in JSON form</a></p>
+    <p class="summary">I reported that Playwright MCP saved text results to files in JSON form; the Playwright team added a setting that saves them as plain text.</p>
+    <p class="meta">Reported <time datetime="2026-11-22">22 Nov 2026</time> <span class="sep">·</span> merged <time datetime="2026-11-26">26 Nov 2026</time> <span class="sep">·</span> code by the project's automated assistant <span class="sep">·</span> not yet released</p>
+  </li>
+  <li>
+    <p class="outlet">Playwright MCP <span class="kind">— Microsoft</span></p>
+    <p class="headline"><a href="/contributions/playwright-mcp-output-gitignore/">Playwright MCP: saved pages that showed up as new project files</a></p>
+    <p class="summary">I reported that the page copies Playwright MCP saves showed up in Git as new project files; the Playwright team fixed it two days later.</p>
+    <p class="meta">Reported <time datetime="2026-11-22">22 Nov 2026</time> <span class="sep">·</span> fixed <time datetime="2026-11-24">24 Nov 2026</time> <span class="sep">·</span> code by the project's automated assistant <span class="sep">·</span> not yet released</p>
+  </li>
+  <li>
+    <p class="outlet">Playwright MCP <span class="kind">— Microsoft</span></p>
+    <p class="headline"><a href="/contributions/playwright-mcp-run-code-echo/">Playwright MCP: a script file repeated in full in every reply</a></p>
+    <p class="summary">I measured and reported that Playwright MCP repeated a whole script file in its reply; another contributor&#x27;s fix was merged two days later.</p>
+    <p class="meta">Reported <time datetime="2026-11-22">22 Nov 2026</time> <span class="sep">·</span> fixed <time datetime="2026-11-24">24 Nov 2026</time> <span class="sep">·</span> code by another contributor <span class="sep">·</span> not yet released</p>
+  </li>
   <li>
     <p class="outlet">Playwright MCP <span class="kind">— Microsoft</span></p>
     <p class="headline"><a href="/contributions/playwright-mcp-windows-file-save/">Playwright MCP: a file-saving failure on Windows</a></p>
@@ -301,7 +338,7 @@ every link checked on <time datetime="2026-11-21">21 November 2026</time>
     <p class="outlet">MiMo Code <span class="kind">— Xiaomi</span></p>
     <p class="headline"><a href="/contributions/mimo-code-login-hint/">MiMo Code: a login hint that pointed to another program</a></p>
     <p class="summary">I reported a login hint that sent users to a different program and submitted the fix; it was merged, and within the hour the maintainer fixed two related places.</p>
-    <p class="meta">Reported <time datetime="2026-11-06">6 Nov 2026</time> <span class="sep">·</span> merged <time datetime="2026-11-13">13 Nov 2026</time> <span class="sep">·</span> my code <span class="sep">·</span> not yet released</p>
+    <p class="meta">Reported <time datetime="2026-11-06">6 Nov 2026</time> <span class="sep">·</span> merged <time datetime="2026-11-13">13 Nov 2026</time> <span class="sep">·</span> released <time datetime="2026-11-27">27 Nov 2026</time> <span class="sep">·</span> my code</p>
   </li>
   <li>
     <p class="outlet">Model Context Protocol, TypeScript SDK <span class="kind">— MCP project, created by Anthropic, now at the Linux Foundation</span></p>
@@ -363,7 +400,7 @@ only if the project accepts it.</p>
 </div>
 
 <footer>
-Compiled and last checked <time datetime="2026-11-21">21 November 2026</time>.
+Compiled and last checked <time datetime="2026-11-28">28 November 2026</time>.
 Back to <a href="/">igorsaevets.com</a>.
 </footer>
 
